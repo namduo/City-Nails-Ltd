@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var key = require('../config/keys')
-
+var citynails = 'citynails@email.com';
 var mailgun = require('mailgun-js')({apiKey: key.mailgun.api_key, domain: key.mailgun.domain_key});
 
 /* GET contact page. */
@@ -13,7 +13,7 @@ router.get('/', function(req, res, next) {
 router.post('/form', function(req, res) {
   var data = {
     from: 'City Nails - Website <postmaster@sandboxc23c218c34754889bcd25fb2e7baba2f.mailgun.org>',
-    to: 'citynails@email.com',
+    to: 'nm.duong@outlook.com',
     subject: 'Message from ' + req.body.name + ': ' + req.body.email,
     text: req.body.message
   };
