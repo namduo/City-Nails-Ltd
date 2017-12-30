@@ -12,8 +12,8 @@ router.get('/', function(req, res, next) {
 /* POST contact form. */
 router.post('/form', function(req, res) {
   var data = {
-    from: 'Mailgun - Portfolio <postmaster@sandboxc23c218c34754889bcd25fb2e7baba2f.mailgun.org>',
-    to: 'nm.duong@outlook.com',
+    from: 'City Nails - Website <postmaster@sandboxc23c218c34754889bcd25fb2e7baba2f.mailgun.org>',
+    to: 'citynails@email.com',
     subject: 'Message from ' + req.body.name + ': ' + req.body.email,
     text: req.body.message
   };
