@@ -1,4 +1,15 @@
-@import "partials/normalize";
-@import "partials/base";
+@import "Bootstrap/bootstrap";
 
-@import "partials/form";
+// ABSTRACTS
+@import "abstracts/variables";
+
+// BASE
+@import "base/base";
+@import "base/typography";
+
+// LAYOUT
+@import "layout/navigation";
+
+// COMPONENTS
+@import "components/preheader";
+@import "components/form";

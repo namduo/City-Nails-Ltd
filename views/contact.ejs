@@ -1,28 +1,30 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
-  <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
+	<% include ../views/partials/head %>
+<body>
+	<h1><%= title %></h1>
+	<p>Welcome to <%= title %></p>
+
+	<!-- PREHEADER -->
+	<% include ../views/partials/preheader %>
+	<% include ../views/partials/nav %>
 
 
-    <form id="contact-form">
-      <label for="name">NAME</label>
-      <input id="name-field" type="text" name="name" value="">
+	<form id="contact-form">
+		<label for="name">NAME</label>
+		<input id="name-field" type="text" name="name" value="">
 
-      <label for="email">EMAIL</label>
-      <input id="email-field" type="email" name="email" value="" required>
+		<label for="email">EMAIL</label>
+		<input id="email-field" type="email" name="email" value="" required>
 
-      <label for="message">MESSAGE</label>
-      <textarea id="message-field" name="message" rows="" cols=""></textarea>
+		<label for="message">MESSAGE</label>
+		<textarea id="message-field" name="message" rows="" cols=""></textarea>
 
-      <input id="submit" type="submit" value="SUBMIT"/>
+		<input id="submit" type="submit" value="SUBMIT"/>
+	</form>
 
-    </form>
-
-  <script src="/javascripts/main.js"></script>
-  </body>
+	<% include ../views/partials/scripts %>
+</body>
 </html>
+
+
