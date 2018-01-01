@@ -1,38 +1,44 @@
 
 // FORM SUBMISSION
-document.getElementById('contact-form').addEventListener('submit', formSubmission);
+$('#contact-form').submit(function(e) {
 
-function formSubmission() {
-	event.preventDefault();
+  e.preventDefault();
 
-	// FORM VALIDATE
-	let formName = document.getElementById('name-field').value;
-	let formEmail = document.getElementById('email-field').value;
-	let formMessage = document.getElementById('message-field').value;
-
-	if (formName === '' || formEmail === '' || formMessage === '') {
-			alert('Please fill in the missing fields');
-	} else {
+  // Form Validate
+  if ($('#name-field').val() === '' || $('#email-field').val() === '' || $('#message-field').val() === '' || $('#phone-field').val() === '') {
+    alert('Please Fill All Fields')
+  } else {
+		console.log('1');
 		
-		fetch('/contact/form', {
-			method: 'POST',
-			headers: {
-				'Accept': 'application/json, text/plain, */*', 'Content-type':'application/json'
+    $.ajax({
+      type: 'post',
+      url: '/contact',
+      data: {
+        name: $('#name-field').val(),
+        email: $('#email-field').val(),
+				message: $('#message-field').val(),
+				phone: $('#phone-field').val()
 			},
-			body:JSON.stringify({
-				name: formName,
-				email: formEmail,
-				message: formMessage
-			})
-		})
-		.then((res) => res.json())
-		.then((data) => console.log(data))
-		.catch((err) => console.log(err))
+			
+			
+      success: function() {
 
-		document.getElementById('contact-form').reset();
-	}
+        // Clear the form
+        $('#name-field').val('');
+        $('#email-field').val('');
+				$('#message-field').val('');
+				$('#phone-field').val('');
 
-}
+        // Success Message
+        $('#form-message').append('Message sent! We\'ll get back to you as soon as we can.');
+
+			}
+			
+
+		});
+  }
+
+});
 
 // GOOGLE MAP
 

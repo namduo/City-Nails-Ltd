@@ -228,7 +228,7 @@ body {
 .bg-offer {
   margin-top: 5rem;
   padding-bottom: calc(10rem - 56px);
-  background-image: linear-gradient(to top, rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.25)), url("../images/offer-bg.jpg");
+  background-image: url("../images/offer-bg.jpg");
   background-attachment: fixed;
   background-position: center;
   -webkit-background-size: cover;
@@ -321,7 +321,7 @@ footer {
   color: inherit; }
 
 i {
-  padding-right: 1rem;
+  padding: 0 .5rem;
   color: #917C57; }
 
 .fa-facebook-official {
@@ -329,6 +329,16 @@ i {
 
 a .fa-facebook-official {
   color: #3B5998; }
+
+a .fa-instagram {
+  background-image: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent; }
+
+#form-message {
+  color: inherit;
+  font-size: inherit; }
 
 #map {
   height: 55vh;

@@ -4,7 +4,7 @@ footer {
 }
 
 i {
-   padding-right: 1rem;
+   padding: 0 .5rem;
    color: $primary;
 }
 
@@ -14,4 +14,16 @@ i {
 
 a .fa-facebook-official {
    color: #3B5998;
+}
+
+a .fa-instagram {
+   background-image: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%,#d6249f 60%,#285AEB 90%);
+   background-clip: text;
+   -webkit-background-clip: text;
+	color: transparent;
+}
+
+#form-message {
+   color: inherit;
+   font-size: inherit;
 }

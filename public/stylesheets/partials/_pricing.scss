@@ -45,10 +45,7 @@
 .bg-offer {
 	margin-top: 5rem;
 	padding-bottom: calc(10rem - 56px);
-	background-image: linear-gradient(
-	  to top,
-	  rgba($black, 0.15), rgba($black, 0.25)),
-	  url('../images/offer-bg.jpg');
+	background-image: url('../images/offer-bg.jpg');
 	  background-attachment: fixed;
 	background-position: center;
 	@include background-cover;
