@@ -1,15 +1,67 @@
 <!DOCTYPE html>
 <html>
-	<% include ../views/partials/head %>
-<body>
-	<!-- PREHEADER -->
-	<% include ../views/partials/preheader %>
-	<% include ../views/partials/nav %>
+  <% include ../views/scripts/head %>
+  
+  <body id="page-top">
+	<!-- Navigation -->
+	<nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+		
+	<div class="container">
+
+		<a class="navbar-brand js-scroll-trigger" href="#page-top">City Nails</a>
+		
+		<button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+
+		<div class="collapse navbar-collapse" id="navbarResponsive">
+			<ul class="navbar-nav ml-auto">
+			<li class="nav-item">
+				<a class="nav-link js-scroll-trigger" href="/">Home</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link js-scroll-trigger" href="#contact">Bookings</a>
+			</li>
+			</ul>
+		</div>
+		
+	</div>
+	</nav>
+
+	<header class="hero hero__pricing text-center text-white d-flex">
+		<div class="container my-auto">
+		<div class="row">
+			<div class="col-lg-10 mx-auto">
+				<h1 class="text-uppercase">
+				<strong>City Nails Price List</strong>
+				</h1>
+				<hr>
+			</div>
+			<div class="col-lg-8 mx-auto">
+				<p class="mb-5">Out of hour appointments available on request</p>
+				<a class="btn btn-primary btn-xl js-scroll-trigger" href="#pricing">View Price List</a>
+			</div>
+		</div>
+		</div>
+	</header>
 
 
+	<% include ../views/partials/pricing %>
 
 
+	<section class="bg-offer text-white">
+		<div class="container text-center">
+			<h2 class="mb-4">10% off on all bookings!</h2>
+			<hp class="mb-4">Offer available from Monday 8th January - Friday 12th January 2018. Just quote 'CN10' offer code at the time of booking.</hp>
+		</div>
+	</section>
 
-	<% include ../views/partials/scripts %>
+	<% include ../views/partials/contact %>
+
+	<% include ../views/partials/footer %>
+
+	<% include ../views/partials/map %>
+
+	<% include ../views/scripts/js %>
 </body>
 </html>

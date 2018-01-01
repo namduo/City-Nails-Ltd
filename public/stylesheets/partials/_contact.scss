@@ -1,0 +1,41 @@
+.btn-unique {
+   background-color: $primary !important;
+ 
+   &:hover {
+     background-color: $hr-primary !important;
+   }
+ 
+   &:active,
+   &:focus {
+     background-color: #00E676 !important;
+   }
+ }
+ 
+ input, textarea {
+ 
+   &:focus {
+     border-bottom: 1px solid $hr-primary !important;
+     box-shadow: 0 1px 0 0 $hr-primary !important;  
+   }
+ 
+   &:active {
+     color: $primary !important;
+   }
+ 
+   &:focus:invalid {
+     border-bottom: 2px solid var(--danger) !important;
+   }
+ 
+ }
+ 
+ input[type=text] {
+   color: inherit !important;
+ }
+ 
+ label.active {
+   color: $primary !important;
+ }
+
+ section#contact {
+    padding-bottom: 3rem;
+ }

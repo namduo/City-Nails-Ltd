@@ -1,0 +1,17 @@
+footer {
+   padding-bottom: 4rem;
+   color: inherit;
+}
+
+.footerPhone i, .footerEmail i, .footerAddress i {
+   padding-right: 1rem;
+   color: $primary;
+}
+
+.fa-facebook-official {
+   margin-top: 10px;
+}
+
+a .fa-facebook-official {
+   color: #3B5998;
+}

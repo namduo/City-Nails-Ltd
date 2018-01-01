@@ -1,8 +1,13 @@
 @import "partials/variables";
 @import "partials/mixins";
 @import "partials/global";
+@import "partials/bootstrap-overrides";
+
 @import "partials/navbar";
 @import "partials/hero";
 @import "partials/services";
+@import "partials/pricing";
 @import "partials/gallery";
-@import "partials/bootstrap-overrides";
+@import "partials/contact";
+@import "partials/footer";
+@import "partials/map";

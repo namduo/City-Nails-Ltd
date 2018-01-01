@@ -63,6 +63,31 @@ img::-moz-selection {
 body {
   -webkit-tap-highlight-color: #212529; }
 
+.text-primary {
+  color: #917C57 !important; }
+
+.btn {
+  font-weight: 300;
+  text-transform: uppercase;
+  border: none;
+  box-shadow: 0 0.5rem 0.5rem rgba(0, 0, 0, 0.1);
+  font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif; }
+
+.btn-xl {
+  padding: 1rem 2rem; }
+
+.btn-primary {
+  background-color: #917C57;
+  border-color: #917C57; }
+  .btn-primary:hover, .btn-primary:focus, .btn-primary:active {
+    color: #fff;
+    background-color: #816e4d !important; }
+  .btn-primary:active, .btn-primary:focus {
+    box-shadow: 0 0 0 0.2rem rgba(123, 89, 81, 0.5) !important; }
+
+.navbar {
+  box-shadow: none; }
+
 #mainNav {
   border-bottom: 1px solid rgba(33, 37, 41, 0.1);
   background-color: #fff;
@@ -123,39 +148,103 @@ body {
           #mainNav.navbar-shrink .navbar-nav > li.nav-item > a.nav-link:focus:hover {
             color: #917C57; } }
 
-.masthead {
-  padding-top: 10rem;
-  padding-bottom: calc(10rem - 56px);
-  background-image: linear-gradient(to top, transparent, rgba(0, 0, 0, 0.25)), url("../images/City_Nails_2.jpg");
-  background-position: left center;
-  background-attachment: fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
+.hero {
   height: 100vh;
   min-height: 650px;
   padding-top: 0;
   padding-bottom: 0; }
-  .masthead hr {
+  .hero hr {
     margin-top: 30px;
     margin-bottom: 30px; }
-  .masthead h1 {
+  .hero h1 {
     font-size: 2rem; }
-  .masthead p {
+  .hero p {
     font-size: 1.2rem; }
   @media (min-width: 768px) {
-    .masthead p {
+    .hero p {
       font-size: 1.5rem; } }
   @media (min-width: 992px) {
-    .masthead h1 {
+    .hero h1 {
       font-size: 3rem; } }
   @media (min-width: 1200px) {
-    .masthead h1 {
+    .hero h1 {
       font-size: 4rem; } }
+  .hero__pricing {
+    padding-top: 10rem;
+    padding-bottom: calc(10rem - 56px);
+    background-image: linear-gradient(to top, transparent, rgba(0, 0, 0, 0.3)), url("../images/pricing-header.jpg");
+    background-position: left center;
+    background-attachment: fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover; }
+  .hero__home {
+    padding-top: 10rem;
+    padding-bottom: calc(10rem - 56px);
+    background-image: linear-gradient(to top, transparent, rgba(0, 0, 0, 0.25)), url("../images/City_Nails_2.jpg");
+    background-position: left center;
+    background-attachment: fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover; }
 
 .service-box {
   max-width: 400px; }
+
+.priceList:first-of-type {
+  padding-top: 5rem; }
+
+.priceList:last-of-type {
+  margin-bottom: 5rem; }
+
+.table th, .table td {
+  padding: 8px; }
+
+.table tr td {
+  font-size: 1rem;
+  text-transform: capitalize; }
+
+.table-title {
+  margin-bottom: 0px;
+  border: none; }
+  .table-title tr td {
+    border: none;
+    color: #917C57;
+    font-size: 1.1rem;
+    font-weight: 400;
+    padding-top: 2rem; }
+
+.table td + td {
+  text-align: right; }
+
+.price-blank {
+  background-color: #e5ebed; }
+
+.right {
+  text-align: right; }
+
+.bg-offer {
+  margin-top: 5rem;
+  padding-bottom: calc(10rem - 56px);
+  background-image: linear-gradient(to top, rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.25)), url("../images/offer-bg.jpg");
+  background-attachment: fixed;
+  background-position: center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover; }
+
+@media (max-width: 575px) {
+  .priceList {
+    padding: 1rem 1rem; }
+  .service-time {
+    display: none; }
+  .table td + td {
+    font-size: 0.9rem; }
+  .pricingHeader {
+    background-position: right; } }
 
 .services-gallery-box {
   position: relative;
@@ -201,39 +290,22 @@ body {
     .services-gallery-box .services-gallery-box-caption .services-gallery-box-caption-content .service-description {
       font-size: 1.2rem; } }
 
-.text-primary {
-  color: #917C57 !important; }
-
-.btn {
-  font-weight: 300;
-  text-transform: uppercase;
-  border: none;
-  box-shadow: 0 0.5rem 0.5rem rgba(0, 0, 0, 0.1);
-  font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif; }
-
-.btn-xl {
-  padding: 1rem 2rem; }
-
-.btn-primary {
-  background-color: #917C57;
-  border-color: #917C57; }
-  .btn-primary:hover, .btn-primary:focus, .btn-primary:active {
-    color: #fff;
-    background-color: #816e4d !important; }
-  .btn-primary:active, .btn-primary:focus {
-    box-shadow: 0 0 0 0.2rem rgba(123, 89, 81, 0.5) !important; }
-
 .btn-unique {
   background-color: #917C57 !important; }
-  .btn-unique:hover, .btn-unique:active, .btn-unique:focus {
+  .btn-unique:hover {
     background-color: #FFB730 !important; }
+  .btn-unique:active, .btn-unique:focus {
+    background-color: #00E676 !important; }
 
 input:focus, textarea:focus {
-  border-bottom: 1px solid #917C57 !important;
-  box-shadow: 0 1px 0 0 #917C57 !important; }
+  border-bottom: 1px solid #FFB730 !important;
+  box-shadow: 0 1px 0 0 #FFB730 !important; }
 
 input:active, textarea:active {
   color: #917C57 !important; }
+
+input:focus:invalid, textarea:focus:invalid {
+  border-bottom: 2px solid var(--danger) !important; }
 
 input[type=text] {
   color: inherit !important; }
@@ -241,7 +313,34 @@ input[type=text] {
 label.active {
   color: #917C57 !important; }
 
-.navbar {
-  box-shadow: none; }
+section#contact {
+  padding-bottom: 3rem; }
+
+footer {
+  padding-bottom: 4rem;
+  color: inherit; }
+
+.footerPhone i, .footerEmail i, .footerAddress i {
+  padding-right: 1rem;
+  color: #917C57; }
+
+.fa-facebook-official {
+  margin-top: 10px; }
+
+a .fa-facebook-official {
+  color: #3B5998; }
+
+#map {
+  height: 55vh;
+  width: 100vw; }
+
+.map-title {
+  color: #917C57; }
+
+.info-window {
+  font-family: inherit; }
+
+.info-content {
+  color: inherit; }
 
 /*# sourceMappingURL=style.css.map */
