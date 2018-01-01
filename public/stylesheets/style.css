@@ -172,13 +172,17 @@ body {
   .hero__pricing {
     padding-top: 10rem;
     padding-bottom: calc(10rem - 56px);
-    background-image: linear-gradient(to top, transparent, rgba(0, 0, 0, 0.3)), url("../images/pricing-header.jpg");
+    background-image: linear-gradient(to top, transparent, rgba(0, 0, 0, 0.25)), url("../images/pricing-header.jpg");
     background-position: left center;
     background-attachment: fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover; }
+  @media (max-width: 575px) {
+    .hero__pricing {
+      background-position: center;
+      background-image: linear-gradient(to top, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.2)), url("../images/pricing-header.jpg"); } }
   .hero__home {
     padding-top: 10rem;
     padding-bottom: calc(10rem - 56px);
@@ -228,7 +232,7 @@ body {
 .bg-offer {
   margin-top: 5rem;
   padding-bottom: calc(10rem - 56px);
-  background-image: url("../images/offer-bg.jpg");
+  background-image: linear-gradient(to top, transparent, rgba(0, 0, 0, 0.2)), url("../images/offer-bg.jpg");
   background-attachment: fixed;
   background-position: center;
   -webkit-background-size: cover;

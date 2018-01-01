@@ -31,11 +31,21 @@
     padding-bottom: calc(10rem - 56px);
     background-image: linear-gradient(
       to top,
-      transparent, rgba($black, 0.3)),
+      transparent, rgba($black, 0.25)),
       url('../images/pricing-header.jpg');
     background-position: left center;
     background-attachment: fixed;
     @include background-cover;
+  }
+
+  @media (max-width: 575px) {
+    &__pricing {
+      background-position: center;
+      background-image: linear-gradient(
+      to top,
+      rgba($black, 0.3), rgba($black, 0.2)),
+      url('../images/pricing-header.jpg');
+    }
   }
 
   &__home {
