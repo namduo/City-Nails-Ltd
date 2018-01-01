@@ -1,0 +1,64 @@
+.services-gallery-box {
+  position: relative;
+  display: block;
+  max-width: 650px;
+  margin: 0 auto;
+
+  .services-gallery-box-caption {
+    position: absolute;
+    bottom: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    opacity: 0;
+    color: $white;
+    background: fade-out($primary, .1);
+    @include transition-all;
+
+    .services-gallery-box-caption-content {
+      position: absolute;
+      top: 50%;
+      width: 100%;
+      transform: translateY(-50%);
+      text-align: center;
+      .service-name,
+      .service-description {
+        padding: 0 2rem;
+        @include sans-serif-font;
+      }
+      .service-name {
+        font-size: 1.5rem;
+        font-weight: 600;
+        text-transform: uppercase;
+      }
+      .service-description {
+        font-size: 1rem;
+      }
+    }
+  }
+
+  &:hover {
+    .services-gallery-box-caption {
+      opacity: 1;
+    }
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  @media (min-width: 768px) {
+    .services-gallery-box-caption {
+      .services-gallery-box-caption-content {
+        .service-name {
+          font-size: 1.5rem;
+        }
+        .service-description {
+          font-size: 1.2rem;
+        }
+      }
+    }
+  }
+
+}

@@ -1,0 +1,67 @@
+// Bootstrap overrides for this template
+.text-primary {
+  color: $primary !important;
+}
+
+.btn {
+  font-weight: 300;
+  text-transform: uppercase;
+  border: none;
+  box-shadow: 0 .5rem .5rem rgba($black, .1);
+  @include sans-serif-font;
+}
+
+.btn-xl {
+  padding: 1rem 2rem;
+}
+
+.btn-primary {
+  background-color: $primary;
+  border-color: $primary;
+  &:hover,
+  &:focus,
+  &:active {
+    color: $white;
+    background-color: darken($primary, 5%) !important;
+  }
+  &:active,
+  &:focus {
+    box-shadow: 0 0 0 0.2rem rgba(123, 89, 81, 0.5) !important;
+  }
+}
+
+.btn-unique {
+  background-color: $primary !important;
+
+  &:hover,
+  &:active,
+  &:focus {
+    background-color: $hr-primary !important;
+  }
+}
+
+input, textarea {
+
+  &:focus {
+    border-bottom: 1px solid $primary !important;
+    box-shadow: 0 1px 0 0 $primary !important;  
+  }
+
+  &:active {
+    color: $primary !important;
+  }
+
+}
+
+input[type=text] {
+  color: inherit !important;
+}
+
+label.active {
+  color: $primary !important;
+}
+
+
+.navbar {
+  box-shadow: none;
+}

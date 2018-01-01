@@ -7,8 +7,6 @@ var bodyParser = require('body-parser');
 var sassMiddleware = require('node-sass-middleware');
 
 var index = require('./routes/index');
-var about = require('./routes/about');
-var services = require('./routes/services');
 var pricing = require('./routes/pricing');
 var contact = require('./routes/contact');
 
@@ -33,8 +31,6 @@ app.use(sassMiddleware({
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', index);
-app.use('/about', about);
-app.use('/services', services);
 app.use('/pricing', pricing);
 app.use('/contact', contact);
 

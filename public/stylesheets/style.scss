@@ -1,14 +1,8 @@
-
-// ABSTRACTS
-@import "abstracts/variables";
-
-// BASE
-@import "base/base";
-@import "base/typography";
-
-// LAYOUT
-@import "layout/navigation";
-
-// COMPONENTS
-@import "components/preheader";
-@import "components/form";
+@import "partials/variables";
+@import "partials/mixins";
+@import "partials/global";
+@import "partials/navbar";
+@import "partials/hero";
+@import "partials/services";
+@import "partials/gallery";
+@import "partials/bootstrap-overrides";

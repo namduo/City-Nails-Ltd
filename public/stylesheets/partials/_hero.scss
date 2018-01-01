@@ -1,0 +1,38 @@
+// Styling for the masthead
+.masthead {
+  padding-top: 10rem;
+  padding-bottom: calc(10rem - 56px);
+  background-image: linear-gradient(
+		to top,
+		transparent, rgba($black, 0.25)),
+    url('../images/City_Nails_2.jpg');
+  background-position: left center;
+  background-attachment: fixed;
+  @include background-cover;
+  
+  height: 100vh;
+  min-height: 650px;
+  padding-top: 0;
+  padding-bottom: 0;
+
+  hr {
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
+
+  h1 { font-size: 2rem; }
+
+  p { font-size: 1.2rem; }
+
+  @media (min-width: 768px) {   
+    p { font-size: 1.5rem; }
+  }
+  
+  @media (min-width: 992px) {
+    h1 { font-size: 3rem; }
+  }
+
+  @media (min-width: 1200px) {
+    h1 { font-size: 4rem; }
+  }
+}
