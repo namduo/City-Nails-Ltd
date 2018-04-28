@@ -344,6 +344,13 @@ a .fa-instagram {
   color: inherit;
   font-size: inherit; }
 
+.copyright {
+  padding-top: 0.8rem;
+  font-size: 0.7rem;
+  color: #a7a7a7; }
+  .copyright span {
+    opacity: 0.5; }
+
 #map {
   height: 55vh;
   width: 100vw; }
