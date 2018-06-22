@@ -5,6 +5,7 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var sassMiddleware = require('node-sass-middleware');
+const helmet = require('helmet');
 
 var index = require('./routes/index');
 var pricing = require('./routes/pricing');
@@ -12,6 +13,8 @@ var contact = require('./routes/contact');
 
 
 var app = express();
+
+app.use(helmet());
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
