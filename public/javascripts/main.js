@@ -1,42 +1,32 @@
+let DOMElements = {
+   form: document.getElementById('contact-form'),
+   inputs: document.querySelectorAll('input, textarea'),
+   button: document.getElementById('btn-container'),
+   messageContainer: document.getElementById('form-message'),
+   successMessage: 'Thanks for getting in touch! We\'ll get back to you as soon as we can.',
+   failMessage: 'Please fill in all the fields.',
+};
 
-// FORM SUBMISSION
-$('#contact-form').submit(function(e) {
+// Form
+DOMElements.form.addEventListener('submit', (e) => {
+   e.preventDefault();
 
-  e.preventDefault();
+   inputs = Array.prototype.slice.call(DOMElements.inputs);
+   console.log(inputs);
+   inputs.forEach(input => {
 
-  // Form Validate
-  if ($('#name-field').val() === '' || $('#email-field').val() === '' || $('#message-field').val() === '' || $('#phone-field').val() === '') {
-    alert('Please Fill All Fields')
-  } else {
-		console.log('1');
-		
-    $.ajax({
-      type: 'post',
-      url: '/contact',
-      data: {
-        name: $('#name-field').val(),
-        email: $('#email-field').val(),
-				message: $('#message-field').val(),
-				phone: $('#phone-field').val()
-			},
-			
-			
-      success: function() {
-
-        // Clear the form
-        $('#name-field').val('');
-        $('#email-field').val('');
-				$('#message-field').val('');
-				$('#phone-field').val('');
-
-        // Success Message
-        $('#form-message').append('Message sent! We\'ll get back to you as soon as we can.');
-
-			}
-			
-		});
-  }
-
+      if ( input.value !== '' ) {
+         // Success
+         DOMElements.button.classList.remove('btn-unique__fail');
+         DOMElements.button.classList.add('btn-unique__success');
+         input.value = '';
+         DOMElements.messageContainer.innerHTML = DOMElements.successMessage;
+      } else {
+         // Error
+         DOMElements.button.classList.add('btn-unique__fail');
+         DOMElements.messageContainer.innerHTML = DOMElements.failMessage;
+      };
+   });
 });
 
 // GOOGLE MAP

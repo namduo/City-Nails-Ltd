@@ -4,10 +4,19 @@
    &:hover {
      background-color: $hr-primary !important;
    }
- 
-   &:active,
-   &:focus {
-     background-color: #00E676 !important;
+   
+   &__success {
+      &:active,
+      &:focus {
+      background-color: #00E676 !important;
+      }   
+   }
+
+   &__fail {
+      &:active,
+      &:focus {
+      background-color: #f80 !important;
+      }   
    }
  }
  

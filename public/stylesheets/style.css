@@ -298,8 +298,10 @@ body {
   background-color: #917C57 !important; }
   .btn-unique:hover {
     background-color: #FFB730 !important; }
-  .btn-unique:active, .btn-unique:focus {
+  .btn-unique__success:active, .btn-unique__success:focus {
     background-color: #00E676 !important; }
+  .btn-unique__fail:active, .btn-unique__fail:focus {
+    background-color: #f80 !important; }
 
 input:focus, textarea:focus {
   border-bottom: 1px solid #FFB730 !important;
