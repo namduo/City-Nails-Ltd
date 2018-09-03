@@ -1,29 +1,27 @@
 var express = require('express');
 var router = express.Router();
-var key = require('../config/keys')
-
-var mailgun = require('mailgun-js')({apiKey: key.mailgun.api_key, domain: key.mailgun.domain_key});
-
+const axios = require('axios');
 
 /* POST contact form. */
 router.post('/', function(req, res) {
-  var data = {
-    from: ' City Nails Website  <postmaster@sandboxc23c218c34754889bcd25fb2e7baba2f.mailgun.org>',
-    to: 'citynails@email.com',
-    subject: 'Enquiry from: ' + req.body.name,
-    text: req.body.message + ' - Telephone: ' + req.body.phone + ' - Email: ' + req.body.email
-  };
-
-  mailgun.messages().send(data, function (error, body) {
-    console.log(body);
-    if(!error)
-			res.json({});
-    else
-      res.send('Mail not sent');
-  });
-
+   
+   axios.post('https://api.emailjs.com/api/v1.0/email/send', {
+      service_id: 'citynails_gmail',
+      template_id: 'template__2',
+      user_id: 'user_eE3zF4XZczCQxqFROwutS',
+      template_params: {
+            email: req.body.email,
+            from_name: req.body.name,
+            phone: req.body.phone,
+            message_html: req.body.message
+         }
+      })
+      .then(() => {
+         res.json({});
+      })
+      .catch(error => {
+         res.send(`Error: ${error}`);
+      })
 });
-
-
 
 module.exports = router;
