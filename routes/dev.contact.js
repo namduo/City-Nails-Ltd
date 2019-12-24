@@ -3,7 +3,7 @@ const router = express.Router()
 const axios = require('axios')
 const config = require('../config')
 const mysql = require('mysql')
-const connection = mysql.createConnection(config.keys.db)
+let connection = mysql.createConnection(config.keys.db)
 
 router.get('/', (req, res, next) => res.render('dev', { title: 'Dev Contact' }))
 
@@ -15,6 +15,11 @@ router.post('/', (req, res) => {
    const sqlQueryLookUp = `select * from users where email = ? `
    const sqlInsert = table => `insert into ${table} set ?`
    
+   connection.connect(err => {
+      if (err) return console.log(`error: ${err.message}`)
+      console.log(`connected to MySQL Server`)
+   })
+
    connection.query(sqlQueryLookUp, email, (error, result) => {
       
       if (error) return console.error(error.message)
@@ -42,8 +47,16 @@ router.post('/', (req, res) => {
             sendEmail(config.keys, req.body.data)
             res.send(result)
          })
+
       }
+
+      connection.end(err=> {
+         if (err) return console.log(`End Connection Error: ${err.message}`)
+         console.log(`Close connection to database`)
+      })
    })
+
+   
 
    function sendEmail(userData, formData) {
       const { endPoints: { emailJS }, emailJS: { serviceID, templateID, userID } } = userData
