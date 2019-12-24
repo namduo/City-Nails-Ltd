@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <% include ../views/scripts/head %>
+  
+  <body id="page-top">
+
+   <section id="contact">
+      <div class="container">
+         <div class="row">
+            <div class="col-lg-8 mx-auto text-center">
+               
+               <div id="contact-form">
+                  <div class="md-form">
+                     <input type="text" id="name-field" name="name" class="form-control">
+                     <label for="name">Your name</label>
+                  </div>
+
+                  <div class="md-form">
+                     <input type="tel" id="phone-field" name="phone" class="form-control">
+                     <label for="phone">Your telephone number</label>
+                  </div>
+
+                  <div class="md-form">
+                     <input type="email" id="email-field" name="email" class="form-control">
+                     <label for="email">Your email</label>
+                  </div>
+
+                  <div class="md-form">
+                     <textarea id="message-field" class="md-textarea" name="message" style="height: 100px"></textarea>
+                     <label for="message">Your message</label>
+                  </div>
+
+                  <div class="text-center">
+                     <p id="form-message"></p>
+                     <button id="btn" class="btn btn-unique" >Send &rarr;</button>
+                  </div>
+               </div>
+
+            </div>
+         </div>
+      </div>
+   </section>
+   
+   <script src="/vendor/jquery/jquery.min.js"></script>
+   <script src="/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+   <script src="/js/axios.min.js"></script>
+   <script src="/javascripts/mdb.js"></script>
+   <script src="/javascripts/dev.js"></script>
+</body>
+</html>
