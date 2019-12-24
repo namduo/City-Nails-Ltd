@@ -35,10 +35,6 @@ router.post('/', (req, res) => {
                if (error) return console.error(error.message)
                
                sendEmail(config.keys, req.body.data)
-               connection.end(err=> {
-                  if (err) return console.log(`End Connection Error: ${err.message}`)
-                  console.log(`Close connection to database`)
-               })
                res.send(result)
             });
          });
@@ -49,19 +45,10 @@ router.post('/', (req, res) => {
             if (error) return console.error(error.message);
             
             sendEmail(config.keys, req.body.data)
-            connection.end(err=> {
-               if (err) return console.log(`End Connection Error: ${err.message}`)
-               console.log(`Close connection to database`)
-            })
             res.send(result)
          })
-      }
-
-      
+      }      
    })
-
-   
-   
 
    function sendEmail(userData, formData) {
       const { endPoints: { emailJS }, emailJS: { serviceID, templateID, userID } } = userData
