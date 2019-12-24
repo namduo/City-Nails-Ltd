@@ -1,14 +1,18 @@
-var express = require('express');
-var router = express.Router();
+const express = require('express');
+const router = express.Router();
 const axios = require('axios');
+const mysql = require('mysql');
+const config = require('../config');
+const connection = mysql.createConnection(config.keys.db);
 
-/* POST contact form. */
-router.post('/', function(req, res) {
+router.post('/', (req, res) => {
    
+   const { emailJS: { serviceID, templateID, userID } } = config.keys;
+
    axios.post('https://api.emailjs.com/api/v1.0/email/send', {
-      service_id: 'citynails_gmail_19',
-      template_id: 'template__2',
-      user_id: 'user_eE3zF4XZczCQxqFROwutS',
+      service_id: serviceID,
+      template_id: templateID,
+      user_id: userID,
       template_params: {
             email: req.body.email,
             from_name: req.body.name,

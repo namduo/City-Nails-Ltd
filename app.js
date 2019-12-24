@@ -1,19 +1,19 @@
 var express = require('express');
-var path = require('path');
-var favicon = require('serve-favicon');
-var logger = require('morgan');
-var cookieParser = require('cookie-parser');
-var bodyParser = require('body-parser');
-var sassMiddleware = require('node-sass-middleware');
+const path = require('path');
+const favicon = require('serve-favicon');
+const logger = require('morgan');
+const cookieParser = require('cookie-parser');
+const bodyParser = require('body-parser');
+const sassMiddleware = require('node-sass-middleware');
 const helmet = require('helmet');
 
-var index = require('./routes/index');
-var pricing = require('./routes/pricing');
-var contact = require('./routes/contact');
+const index = require('./routes/index');
+const pricing = require('./routes/pricing');
+const contact = require('./routes/contact');
+const devContact = require('./routes/dev.contact');
 
 
-var app = express();
-
+const app = express();
 app.use(helmet());
 
 // view engine setup
@@ -21,7 +21,7 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
 // uncomment after placing your favicon in /public
-//app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
+// app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -33,10 +33,16 @@ app.use(sassMiddleware({
   sourceMap: true
 }));
 app.use(express.static(path.join(__dirname, 'public')));
+app.use('/js', express.static(__dirname + '/node_modules/axios/dist'))
+app.use((req, res, next) => {
+   res.setHeader("Set-Cookie", "HttpOnly;Secure;SameSite=None")
+   next()
+});
 
 app.use('/', index);
 app.use('/pricing', pricing);
 app.use('/contact', contact);
+app.use('/dev', devContact);
 
 
 // catch 404 and forward to error handler
