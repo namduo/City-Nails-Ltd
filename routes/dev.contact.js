@@ -14,11 +14,6 @@ router.post('/', (req, res) => {
    
    const sqlQueryLookUp = `select * from users where email = ? `
    const sqlInsert = table => `insert into ${table} set ?`
-   
-   // connection.connect(err => {
-   //    if (err) return console.log(`error: ${err.message}`)
-   //    console.log(`connected to MySQL Server`)
-   // })
 
    pool.getConnection((err, connection) => {
       connection.query(sqlQueryLookUp, email, (error, result) => {
