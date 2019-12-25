@@ -53,7 +53,7 @@ router.post('/', (req, res) => {
 
       axios.post(emailJS, {
          service_id: serviceID,
-         template_id: 'template__1',
+         template_id: templateID,
          user_id: userID,
          template_params: {
                email: email,

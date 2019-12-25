@@ -1,4 +1,4 @@
-var express = require('express');
+const express = require('express');
 const path = require('path');
 const favicon = require('serve-favicon');
 const logger = require('morgan');
@@ -11,7 +11,6 @@ const index = require('./routes/index');
 const pricing = require('./routes/pricing');
 const contact = require('./routes/contact');
 const devContact = require('./routes/dev.contact');
-
 
 const app = express();
 app.use(helmet());
@@ -35,7 +34,7 @@ app.use(sassMiddleware({
 app.use(express.static(path.join(__dirname, 'public')));
 app.use('/js', express.static(__dirname + '/node_modules/axios/dist'))
 app.use((req, res, next) => {
-   res.setHeader("Set-Cookie", "HttpOnly;Secure;SameSite=None")
+   // res.setHeader("Set-Cookie", "HttpOnly;SameSite=None")
    next()
 });
 
