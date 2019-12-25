@@ -34,8 +34,7 @@ export default function formSubmission(){
                }
                
             });
-      }
-
+         }
       });
 }
 

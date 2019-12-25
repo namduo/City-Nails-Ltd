@@ -5,9 +5,9 @@ const mysql = require('mysql');
 const config = require('../config');
 let pool = mysql.createPool(config.keys.db)
 
-router.post('/', (req, res) => {
-   
-   const { name, phone, email, message } = req.body.data;
+router.post('/', (req, res) => {   
+
+   const { name, phone, email, message } = req.body;
    const person = { email, phone, name }
    
    const sqlQueryLookUp = `select * from users where email = ? `
@@ -27,7 +27,7 @@ router.post('/', (req, res) => {
                connection.query(sqlInsert('messages'), messageInsert, (error, result) => {
                   if (error) return console.error(error.message)
                   
-                  sendEmail(config.keys, req.body.data)
+                  sendEmail(config.keys, req.body)
                   console.log(result)
                   res.end()
                })
@@ -38,7 +38,7 @@ router.post('/', (req, res) => {
             connection.query(sqlInsert('messages'), messageInsert, (error, result) => {
                if (error) return console.error(error.message);
                
-               sendEmail(config.keys, req.body.data)
+               sendEmail(config.keys, req.body)
                console.log(result)
                res.end()
             })
@@ -65,7 +65,7 @@ router.post('/', (req, res) => {
          .then(() => console.log({ formData, userData }))
          .catch(error => console.log(`Error: ${error}`))
    }
-
+   
 })
 
 module.exports = router;
